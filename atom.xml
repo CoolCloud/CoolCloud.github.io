@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://coolcloud.github.io/atom.xml" rel="self"/>
-  <link href="http://coolcloud.github.io/"/>
-  <updated>2015-07-14T19:23:45+08:00</updated>
-  <id>http://coolcloud.github.io/</id>
+  <link href="http://blog.daxiaoyun.com/atom.xml" rel="self"/>
+  <link href="http://blog.daxiaoyun.com/"/>
+  <updated>2015-07-15T11:27:42+08:00</updated>
+  <id>http://blog.daxiaoyun.com/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
     
