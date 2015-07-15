@@ -56,7 +56,33 @@ $(document).ready(
 );
 </script>
 
-	
+	<!-- MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </head>
 
 
@@ -98,19 +124,20 @@ $(document).ready(
 
 	<div id="content" class="inner"><article class="post">
 	<h2 class="title">Post Title</h2>
-	<div class="entry-content"><h1>我的第一篇博文</h1>
+	<div class="entry-content"><h1 id="section">我的第一篇博文</h1>
 
-<h2>以后坚持写作，整理笔记，分享</h2>
+<h2 id="section-1">以后坚持写作，整理笔记，分享</h2>
 
 <p>关于</p>
 
 <ul>
-<li>Python</li>
-<li>PHP</li>
-<li>docker</li>
-<li>linux</li>
+  <li>Python</li>
+  <li>PHP</li>
+  <li>docker</li>
+  <li>linux</li>
 </ul>
 
+<script type="math/tex; mode=display">f'\left( x\right) = \lim _{x\rightarrow 0}\dfrac {f\left( x+\Delta x\right) - f\left( x\right)}{\Delta x}</script>
 </div>
 
 
