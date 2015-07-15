@@ -9,8 +9,7 @@
   <meta name="author" content="Cool Cloud">
 
   
-  <meta name="description" content="坚持写作，记笔记，分享
-彻底部署博客到 github pages 昨天Octopress 搭建流程 – Github Pages 遇到一个问题 push 总是不成功，添加 rsa 公钥提示，github 提示 key 已经在使用，所以重新生成了一个，需要执行 ssh-add 命令，重启之后不管用了 &hellip;">
+  <meta name="description" content="从今天起，做一个写博客的人，坚持写作，记笔记，分享，终于彻底部署博客到 github pages，微信公众号也可以一起发表。 记录生活与工作，学习的技巧和方法，遇到的问题和解决办法，很有趣。 昨天Octopress 搭建流程 – Github Pages 遇到一个问题 push 总是不成功，添加 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,8 +84,9 @@
   </header>
 
 
-<div class="entry-content"><h2 id="section">坚持写作，记笔记，分享</h2>
-<p>彻底部署博客到 github pages</p>
+<div class="entry-content"><p>从今天起，做一个写博客的人，坚持写作，记笔记，分享，终于彻底部署博客到 github pages，微信公众号也可以一起发表。</p>
+
+<p>记录生活与工作，学习的技巧和方法，遇到的问题和解决办法，很有趣。</p>
 
 <p>昨天<a href="http://shengmingzhiqing.com/blog/setup-octopress-with-github-pages.html/">Octopress 搭建流程 – Github Pages</a></p>
 
@@ -102,15 +102,63 @@ $ssh-add ~/.ssh/id_rsa_github
 
 <p>今天上午<a href="http://shengmingzhiqing.com/blog/octopress-lean-modification-1.html/">Octopress 精益修改</a></p>
 
-<h2 id="section-1">关于主题</h2>
+<h3 id="section">关于主题</h3>
+
 <p>体验了CleanPress 之后还是用经典主题比较舒服</p>
 
-<h2 id="markdown-">Markdown 解析器</h2>
+<h3 id="markdown-">Markdown 解析器</h3>
+
 <p>尝试博主推荐的 <a href="http://kramdown.gettalong.org/syntax.html#tables">kramdown</a>，非常强大，支持LaTeX，下面是一个例子</p>
 
 <script type="math/tex; mode=display">f'\left( x\right) = \lim _{x\rightarrow 0}\dfrac {f\left( x+\Delta x\right) - f\left( x\right)}{\Delta x}</script>
 
-<p>接下来，且行且写。</p>
+<h3 id="section-1">本地预览</h3>
+
+<blockquote>
+  <p>rake preview</p>
+</blockquote>
+
+<p>访问：http://localhost:4000/</p>
+
+<h3 id="section-2">发布</h3>
+
+<blockquote>
+  <p>rake gen_deploy</p>
+</blockquote>
+
+<p>全部命令</p>
+
+<pre><code>clean                     -- clean out caches: .pygments-cache, .gist-cache, .sass-cache
+copydot[source,dest]      -- copy dot files for deployment
+deploy                    -- default deploy task
+gen_deploy                -- generate website and deploy
+generate                  -- generate jekyll site
+install[theme]            -- initial setup for octopress: copies the default theme into the path of jekyll's generator
+integrate                 -- move all stashed posts back into the posts directory, ready for site generation
+isolate[filename]         -- move all other posts than the one currently being worked on to a temporary stash location (st
+list                      -- list tasks
+new_page[filename]        -- create a new page in source/(filename)/index.md
+new_post[title]           -- begin a new post in source/_posts
+preview                   -- preview the site in a web browser
+push                      -- deploy public directory to github pages
+rsync                     -- deploy website via rsync
+set_root_dir[dir]         -- update configurations to support publishing to root or sub directory
+setup_github_pages[repo]  -- set up _deploy folder and deploy branch for github pages deployment
+update_source[theme]      -- move source to source.old, install source theme updates, replace source/_includes/navigation.
+update_style[theme]       -- move sass to sass.old, install sass theme updates, replace sass/custom with sass.old/custom
+watch                     -- watch the site and regenerate when it changes
+</code></pre>
+
+<h3 id="section-3">接下来</h3>
+
+<ul>
+  <li>逐渐深入 kramdown 语法</li>
+  <li>添加评论插件 disqus</li>
+  <li>添加最后修改记录插件，目录插件</li>
+  <li>发掘一些更好玩的</li>
+</ul>
+
+<p>且行且写且珍惜</p>
 </div>
 
 
