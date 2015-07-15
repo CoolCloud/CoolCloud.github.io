@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | 大小云]]></title>
   <link href="http://blog.daxiaoyun.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://blog.daxiaoyun.com/"/>
-  <updated>2015-07-15T14:59:50+08:00</updated>
+  <updated>2015-07-15T16:07:49+08:00</updated>
   <id>http://blog.daxiaoyun.com/</id>
   <author>
     <name><![CDATA[Cool Cloud]]></name>
@@ -89,6 +89,7 @@ watch                     -- watch the site and regenerate when it changes
   <li>逐渐深入 kramdown 语法</li>
   <li>添加评论插件 disqus</li>
   <li>添加最后修改记录插件，目录插件</li>
+  <li>一些学习的代码示例放到 github</li>
   <li>发掘一些更好玩的</li>
 </ul>
 
