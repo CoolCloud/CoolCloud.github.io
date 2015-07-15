@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://blog.daxiaoyun.com/atom.xml" rel="self"/>
   <link href="http://blog.daxiaoyun.com/"/>
-  <updated>2015-07-15T11:27:42+08:00</updated>
+  <updated>2015-07-15T11:50:48+08:00</updated>
   <id>http://blog.daxiaoyun.com/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,5 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Post Title]]></title>
+    <link href="http://blog.daxiaoyun.com/blog/2015/07/15/The-first/"/>
+    <updated>2015-07-15T00:00:00+08:00</updated>
+    <id>http://blog.daxiaoyun.com/blog/2015/07/15/The-first</id>
+    <content type="html"><![CDATA[<h1>我的第一篇博文</h1>
+
+<h2>以后坚持写作，整理笔记，分享</h2>
+
+<p>关于</p>
+
+<ul>
+<li>Python</li>
+<li>PHP</li>
+<li>docker</li>
+<li>linux</li>
+</ul>
+
+]]></content>
+  </entry>
   
 </feed>
