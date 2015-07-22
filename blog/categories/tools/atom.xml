@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Tools | 大小云]]></title>
   <link href="http://blog.daxiaoyun.com/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://blog.daxiaoyun.com/"/>
-  <updated>2015-07-23T00:30:40+08:00</updated>
+  <updated>2015-07-23T00:32:53+08:00</updated>
   <id>http://blog.daxiaoyun.com/</id>
   <author>
     <name><![CDATA[Cool Cloud]]></name>
@@ -24,7 +24,7 @@
 <p>大概的学习流程：</p>
 
 <ol>
-  <li>看 Python 中文文档，变看文档别做例子，建一个项目 py-study，对于新手还是用 IDE 比较顺手，可以通过提示和自动完成熟悉 Python 语法，我用的是 pycharm，可以在项目里直接调试</li>
+  <li>看 Python 中文文档，边看文档边做例子，建一个项目 py-study，对于新手还是用 IDE 比较顺手，可以通过提示和自动完成熟悉 Python 语法，我用的是 pycharm，可以在项目里直接调试</li>
   <li>看 Flask 中文文档（项目框架，熟悉主要的语法和库，重点学习一下 blueprint）</li>
   <li>看 Werkzeug 中文文档（web 服务器，快速过一遍）</li>
   <li>开始做项目，看一个现在项目里的例子，照着做，我开始接手一个相对独立的系统，活动系统，设计数据结构，评审讨论，之后开始实施，熟悉工作流程</li>
