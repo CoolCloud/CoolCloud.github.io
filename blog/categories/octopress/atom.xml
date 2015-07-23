@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | 大小云]]></title>
   <link href="http://blog.daxiaoyun.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://blog.daxiaoyun.com/"/>
-  <updated>2015-07-23T10:46:20+08:00</updated>
+  <updated>2015-07-24T00:45:10+08:00</updated>
   <id>http://blog.daxiaoyun.com/</id>
   <author>
     <name><![CDATA[Cool Cloud]]></name>
@@ -73,6 +73,7 @@ isolate[filename]         -- move all other posts than the one currently being w
 list                      -- list tasks
 new_page[filename]        -- create a new page in source/(filename)/index.md
 new_post[title]           -- begin a new post in source/_posts
+preview                   -- preview the site in a web browser
 preview                   -- preview the site in a web browser
 push                      -- deploy public directory to github pages
 rsync                     -- deploy website via rsync
