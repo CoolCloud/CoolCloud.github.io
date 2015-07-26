@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Evernote | 大小云]]></title>
   <link href="http://blog.daxiaoyun.com/blog/categories/evernote/atom.xml" rel="self"/>
   <link href="http://blog.daxiaoyun.com/"/>
-  <updated>2015-07-26T23:58:38+08:00</updated>
+  <updated>2015-07-27T00:01:59+08:00</updated>
   <id>http://blog.daxiaoyun.com/</id>
   <author>
     <name><![CDATA[Cool Cloud]]></name>
@@ -18,7 +18,9 @@
     <link href="http://blog.daxiaoyun.com/blog/20150726/evernote-tag/"/>
     <updated>2015-07-26T23:30:00+08:00</updated>
     <id>http://blog.daxiaoyun.com/blog/20150726/evernote-tag</id>
-    <content type="html"><![CDATA[<h2 id="section">善用快捷方式</h2>
+    <content type="html"><![CDATA[<p><img src="/images/my/evernote/tag.png"></p>
+
+<h2 id="section">善用快捷方式</h2>
 
 <p>可以把标签和笔记本添加到快捷方式，之前只知道添加笔记，刚才创建了一个 ReadItLater 标签，把稍后阅读的文章都打上标签，读完之后去掉标签，很容易管理</p>
 
