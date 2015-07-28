@@ -4,7 +4,7 @@
   <title><![CDATA[大小云]]></title>
   <link href="http://blog.daxiaoyun.com/atom.xml" rel="self"/>
   <link href="http://blog.daxiaoyun.com/"/>
-  <updated>2015-07-27T00:02:43+08:00</updated>
+  <updated>2015-07-28T10:51:16+08:00</updated>
   <id>http://blog.daxiaoyun.com/</id>
   <author>
     <name><![CDATA[Cool Cloud]]></name>
@@ -12,6 +12,108 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[终端录屏神器]]></title>
+    <link href="http://blog.daxiaoyun.com/blog/20150727/terminal-record-tool/"/>
+    <updated>2015-07-27T23:30:00+08:00</updated>
+    <id>http://blog.daxiaoyun.com/blog/20150727/terminal-record-tool</id>
+    <content type="html"><![CDATA[<p><img src="http://blog.daxiaoyun.com/images/my/tools/asciinema_-_Record_and_share_your_terminal_sessions__the_right_way.png" /></p>
+
+<p>源于今天的一次讨论（QQ群里）</p>
+
+<p>我上午提了一下</p>
+
+<blockquote>
+  <p>这里应该使用 INCR 方法比较好吧？这种写法总数可能不准
+user_count = get_savings_users()
+mc.set(MC_ZHIWANG_SAVINGS_USERS, int(user_count) + 1)</p>
+</blockquote>
+
+<p>paul</p>
+
+<blockquote>
+  <p>我们的set方法是封装过的。。。 
+所以没法直接用INCR</p>
+</blockquote>
+
+<p>tonyseek</p>
+
+<blockquote>
+  <p>其实是打算以后把持久化的 rds 和 mc 分开实例的
+mc 要不要换成真 mc 也是讨论过的事情 ¬ ¬（感觉点燃了什么）
+吼啊，给 solar-cache 提个 MR 嘛，然后 at guojing review（在大家反复提到 MR 
+这个动作时，我后来真的做了）</p>
+</blockquote>
+
+<p>放开那个西红柿㍿  （光看名字就知道他有多逗比，确实很逗）</p>
+
+<blockquote>
+  <p>solar-cache 可以提 mr。
+因为我们的对象是 pickle 过的，之前 int 型没有单独处理，所以只能+1来做。可以改一下。
+所以当时我加了一个 self._pickle，这个父类实现是什么都不做。继承后的 GHRedis 做了 
+pickle，其实完全也可以用父类，就不会有 pickle 问题了，不过这样存对象也麻烦。而且写那么多 
+redis 的具体实现，外面用哪个也是问题。。
+（关于 pickle 是啥？我直接问了，tony 回复是 Python 
+内置的对象序列化，问问题也不丢人，反而获益颇丰）</p>
+</blockquote>
+
+<p>tonyseek</p>
+
+<blockquote>
+  <p>是的，这个 mc 当初就打算当 mc 用，是我们业务代码里的用法比较简单粗暴了 ¬ ¬
+持久化数据应该用单独的 rds 实例的</p>
+</blockquote>
+
+<p>放开那个西红柿㍿</p>
+
+<blockquote>
+  <p>不过自己重载一下 redis 的 incr 应该比较简单，只是一直没有人做，因为大家都无所谓。。万年 
+TODO 了。。
+你可以提个 mr，我觉得不是很难，哈哈，试试看。</p>
+</blockquote>
+
+<p>还有另外一个问题也得到了充分的回答，关于 blinker signal  是同步的吗？</p>
+
+<p>我总结：</p>
+
+<blockquote>
+  <p>很好的学习机会，多提问，提有质量的问题，引发讨论。
+之前一直也不敢怎么提，就是怕提出太弱智的问题，现在全面深入之后，要爆发了。</p>
+</blockquote>
+
+<p>吃饭后我就在 solar-cache 提个 MR，看到了 solar-cache 发布版本是这样的</p>
+
+<p><strong>发布版本</strong></p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">$ bumpversion minor  # 或 bumpversion patch
+</span><span class="line">$ git push --tags upstream master
+</span><span class="line">$ python setup.py sdist bdist_wheel
+</span><span class="line">$ devpi upload dist/*</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>题外话：偶然知道了 Evernote 添加 checkbox 的快捷键，opt + 回车 ，重复执行此快捷键，会切换选中状态，好玩</p>
+
+<p>于是准备去看看 bumpversion 是个什么东东？</p>
+
+<p>看到了这个<a href="https://asciinema.org/a/3828">视频</a></p>
+
+<p>很好奇，这个视频的做法，其实是点了一下导航条的 docs 想看看关于 bumpversion 的文档，但是它给了我 asciinema 的<a href="https://asciinema.org/docs">文档</a>，简洁的命令使用了brew 瞬间吸引了我，</p>
+
+<p>但是，安装失败了，Error: Failed to download resource “go—gotools”，再试一次，不行，上VPN试试，直接 clone 可以啊（在 VPN 还没有连上时），再试一次</p>
+
+<blockquote>
+  <p>git clone https://go.googlesource.com/tools.git /Library/Caches/Homebrew/go–gotools–git</p>
+</blockquote>
+
+<p>点击<a href="https://asciinema.org/browse/featured">这里</a>欣赏一下极客们是怎么玩终端的吧？</p>
+
+<p>今天老婆做了疙瘩汤，有段时间没吃了，我吃了两碗。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[善用标签管理笔记]]></title>

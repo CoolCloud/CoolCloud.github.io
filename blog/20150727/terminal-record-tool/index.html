@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>终端录屏神器 - 大小云</title>
+  <meta name="author" content="Cool Cloud">
+
+  
+  <meta name="description" content="源于今天的一次讨论（QQ群里） 我上午提了一下 这里应该使用 INCR 方法比较好吧？这种写法总数可能不准
+user_count = get_savings_users()
+mc.set(MC_ZHIWANG_SAVINGS_USERS, int(user_count) + 1) paul &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.daxiaoyun.com/blog/20150727/terminal-record-tool/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="大小云" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">大小云</a></h1>
+  
+    <h2>清凉自由且充满梦想和渴望</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="blog.daxiaoyun.com">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">终端录屏神器</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-07-27T23:30:00+08:00'><span class='date'>2015 年7 月27 日</span> <span class='time'>11:30 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img src="/images/my/tools/asciinema_-_Record_and_share_your_terminal_sessions__the_right_way.png" /></p>
+
+<p>源于今天的一次讨论（QQ群里）</p>
+
+<p>我上午提了一下</p>
+
+<blockquote>
+  <p>这里应该使用 INCR 方法比较好吧？这种写法总数可能不准
+user_count = get_savings_users()
+mc.set(MC_ZHIWANG_SAVINGS_USERS, int(user_count) + 1)</p>
+</blockquote>
+
+<p>paul</p>
+
+<blockquote>
+  <p>我们的set方法是封装过的。。。 
+所以没法直接用INCR</p>
+</blockquote>
+
+<p>tonyseek</p>
+
+<blockquote>
+  <p>其实是打算以后把持久化的 rds 和 mc 分开实例的
+mc 要不要换成真 mc 也是讨论过的事情 ¬ ¬（感觉点燃了什么）
+吼啊，给 solar-cache 提个 MR 嘛，然后 at guojing review（在大家反复提到 MR 
+这个动作时，我后来真的做了）</p>
+</blockquote>
+
+<p>放开那个西红柿㍿  （光看名字就知道他有多逗比，确实很逗）</p>
+
+<blockquote>
+  <p>solar-cache 可以提 mr。
+因为我们的对象是 pickle 过的，之前 int 型没有单独处理，所以只能+1来做。可以改一下。
+所以当时我加了一个 self._pickle，这个父类实现是什么都不做。继承后的 GHRedis 做了 
+pickle，其实完全也可以用父类，就不会有 pickle 问题了，不过这样存对象也麻烦。而且写那么多 
+redis 的具体实现，外面用哪个也是问题。。
+（关于 pickle 是啥？我直接问了，tony 回复是 Python 
+内置的对象序列化，问问题也不丢人，反而获益颇丰）</p>
+</blockquote>
+
+<p>tonyseek</p>
+
+<blockquote>
+  <p>是的，这个 mc 当初就打算当 mc 用，是我们业务代码里的用法比较简单粗暴了 ¬ ¬
+持久化数据应该用单独的 rds 实例的</p>
+</blockquote>
+
+<p>放开那个西红柿㍿</p>
+
+<blockquote>
+  <p>不过自己重载一下 redis 的 incr 应该比较简单，只是一直没有人做，因为大家都无所谓。。万年 
+TODO 了。。
+你可以提个 mr，我觉得不是很难，哈哈，试试看。</p>
+</blockquote>
+
+<p>还有另外一个问题也得到了充分的回答，关于 blinker signal  是同步的吗？</p>
+
+<p>我总结：</p>
+
+<blockquote>
+  <p>很好的学习机会，多提问，提有质量的问题，引发讨论。
+之前一直也不敢怎么提，就是怕提出太弱智的问题，现在全面深入之后，要爆发了。</p>
+</blockquote>
+
+<p>吃饭后我就在 solar-cache 提个 MR，看到了 solar-cache 发布版本是这样的</p>
+
+<p><strong>发布版本</strong></p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">$ bumpversion minor  # 或 bumpversion patch
+</span><span class="line">$ git push --tags upstream master
+</span><span class="line">$ python setup.py sdist bdist_wheel
+</span><span class="line">$ devpi upload dist/*</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>题外话：偶然知道了 Evernote 添加 checkbox 的快捷键，opt + 回车 ，重复执行此快捷键，会切换选中状态，好玩</p>
+
+<p>于是准备去看看 bumpversion 是个什么东东？</p>
+
+<p>看到了这个<a href="https://asciinema.org/a/3828">视频</a></p>
+
+<p>很好奇，这个视频的做法，其实是点了一下导航条的 docs 想看看关于 bumpversion 的文档，但是它给了我 asciinema 的<a href="https://asciinema.org/docs">文档</a>，简洁的命令使用了brew 瞬间吸引了我，</p>
+
+<p>但是，安装失败了，Error: Failed to download resource “go—gotools”，再试一次，不行，上VPN试试，直接 clone 可以啊（在 VPN 还没有连上时），再试一次</p>
+
+<blockquote>
+  <p>git clone https://go.googlesource.com/tools.git /Library/Caches/Homebrew/go–gotools–git</p>
+</blockquote>
+
+<p>点击<a href="https://asciinema.org/browse/featured">这里</a>欣赏一下极客们是怎么玩终端的吧？</p>
+
+<p>今天老婆做了疙瘩汤，有段时间没吃了，我吃了两碗。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Cool Cloud</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-07-27T23:30:00+08:00'><span class='date'>2015 年7 月27 日</span> <span class='time'>11:30 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/tools/'>tools</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.daxiaoyun.com/blog/20150727/terminal-record-tool/" data-via="EaseCloud" data-counturl="http://blog.daxiaoyun.com/blog/20150727/terminal-record-tool/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/20150726/evernote-tag/" title="Previous Post: 善用标签管理笔记">&laquo; 善用标签管理笔记</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/20150727/terminal-record-tool/">终端录屏神器</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20150726/evernote-tag/">善用标签管理笔记</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20150724/grandmother-garden/">外婆的园子</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20150722/in-python-world/">进入 Python 世界</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20150715/The-first/">Octopress 初体验</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Cool Cloud -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
