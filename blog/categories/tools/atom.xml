@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Tools | 大小云]]></title>
   <link href="http://blog.daxiaoyun.com/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://blog.daxiaoyun.com/"/>
-  <updated>2015-07-29T23:26:02+08:00</updated>
+  <updated>2015-07-30T01:09:43+08:00</updated>
   <id>http://blog.daxiaoyun.com/</id>
   <author>
     <name><![CDATA[Cool Cloud]]></name>
@@ -12,6 +12,58 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[讨论起来吧]]></title>
+    <link href="http://blog.daxiaoyun.com/blog/20150730/disqus/"/>
+    <updated>2015-07-30T00:40:00+08:00</updated>
+    <id>http://blog.daxiaoyun.com/blog/20150730/disqus</id>
+    <content type="html"><![CDATA[<p><img src="/images/my/octopress/disqus/Disqus_–_About_Disqus.png"></p>
+
+<p>搭建博客之后一直准备上一个评论的功能，使用著名的 disqus，今天终于搞定了，原来如此简单。</p>
+
+<p>简单两步搞定</p>
+
+<h3 id="disqus-add-disqus-to-your-site">第一步：注册 disqus 账号，Add Disqus to your site</h3>
+
+<p>我使用 Google 账号，自动注册</p>
+
+<p>开始找不到 Add Disqus to your site，还以为进错地方了，看别人的教程里有一个大大的按钮很醒目，看起来是改版了，我想应该有开发者中心类似的地方，果然在右下角看到了小小的链接，找到了，很喜悦。</p>
+
+<p><img src="/images/my/octopress/disqus/i_found_you.png"></p>
+
+<p>选择一个站点的简短名称，我就用了 daxiaoyun，这样我就可以通过 daxiaoyun.disqus.com 来管理评论了，还能看到统计信息。</p>
+
+<p>Choose your unique Disqus URL
+This is where you’ll access moderation tools and site settings. This will also become your site’s “shortname”.</p>
+
+<p><img src="/images/my/octopress/disqus/Disqus___Register_site.png"></p>
+
+<h3 id="octopress">第二步： 配置 octopress</h3>
+
+<p>_config.yaml  （对于引用里的注释#，可以加反斜杠来转义 \#）</p>
+
+<blockquote>
+  <p># Disqus Comments</p>
+
+  <p>disqus_short_name: daxiaoyun</p>
+
+  <p>disqus_show_comment_count: true</p>
+</blockquote>
+
+<p>博文支持评论设置</p>
+
+<blockquote>
+  <p>comments: true</p>
+</blockquote>
+
+<p>我自己先评论一条试试。</p>
+
+<p><img src="/images/my/octopress/disqus/the_first_comments.png"></p>
+
+<p>它不仅仅是一个工具，已然成为了社区。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[好照片]]></title>

@@ -9,7 +9,7 @@
   <meta name="author" content="Cool Cloud">
 
   
-  <meta name="description" content="今天推荐一个 mac 上的傻瓜处理图片的软件——好照片 源于高中同学想让我给他代领一张电信卡，但是需要他的身份证，他只能把身份证的正反面都拍给我，我需要拼接，没有 Photoshop 的电脑怎么办？ Google 一下 mac 图片拼接，果然有一个“CollageIt Pro 图片拼接工具 For &hellip;">
+  <meta name="description" content="搭建博客之后一直准备上一个评论的功能，使用著名的 disqus，今天终于搞定了，原来如此简单。 简单两步搞定 第一步：注册 disqus 账号，Add Disqus to your site 我使用 Google 账号，自动注册 开始找不到 Add Disqus to your site， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,81 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/20150730/disqus/">讨论起来吧</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-07-30T00:40:00+08:00'><span class='date'>2015 年7 月30 日</span> <span class='time'>12:40 am</span></time>
+        
+           | <a href="/blog/20150730/disqus/#disqus_thread"
+             data-disqus-identifier="http://blog.daxiaoyun.com/blog/20150730/disqus/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="/images/my/octopress/disqus/Disqus_–_About_Disqus.png" /></p>
+
+<p>搭建博客之后一直准备上一个评论的功能，使用著名的 disqus，今天终于搞定了，原来如此简单。</p>
+
+<p>简单两步搞定</p>
+
+<h3 id="disqus-add-disqus-to-your-site">第一步：注册 disqus 账号，Add Disqus to your site</h3>
+
+<p>我使用 Google 账号，自动注册</p>
+
+<p>开始找不到 Add Disqus to your site，还以为进错地方了，看别人的教程里有一个大大的按钮很醒目，看起来是改版了，我想应该有开发者中心类似的地方，果然在右下角看到了小小的链接，找到了，很喜悦。</p>
+
+<p><img src="/images/my/octopress/disqus/i_found_you.png" /></p>
+
+<p>选择一个站点的简短名称，我就用了 daxiaoyun，这样我就可以通过 daxiaoyun.disqus.com 来管理评论了，还能看到统计信息。</p>
+
+<p>Choose your unique Disqus URL
+This is where you’ll access moderation tools and site settings. This will also become your site’s “shortname”.</p>
+
+<p><img src="/images/my/octopress/disqus/Disqus___Register_site.png" /></p>
+
+<h3 id="octopress">第二步： 配置 octopress</h3>
+
+<p>_config.yaml  （对于引用里的注释#，可以加反斜杠来转义 \#）</p>
+
+<blockquote>
+  <p># Disqus Comments</p>
+
+  <p>disqus_short_name: daxiaoyun</p>
+
+  <p>disqus_show_comment_count: true</p>
+</blockquote>
+
+<p>博文支持评论设置</p>
+
+<blockquote>
+  <p>comments: true</p>
+</blockquote>
+
+<p>我自己先评论一条试试。</p>
+
+<p><img src="/images/my/octopress/disqus/the_first_comments.png" /></p>
+
+<p>它不仅仅是一个工具，已然成为了社区。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -684,6 +759,10 @@ watch                     -- watch the site and regenerate when it changes
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/20150730/disqus/">讨论起来吧</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/20150728/haozhaopian/">好照片</a>
       </li>
     
@@ -697,10 +776,6 @@ watch                     -- watch the site and regenerate when it changes
     
       <li class="post">
         <a href="/blog/20150724/grandmother-garden/">外婆的园子</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20150722/in-python-world/">进入 Python 世界</a>
       </li>
     
   </ul>
