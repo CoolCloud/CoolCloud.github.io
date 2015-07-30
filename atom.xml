@@ -4,7 +4,7 @@
   <title><![CDATA[大小云]]></title>
   <link href="http://blog.daxiaoyun.com/atom.xml" rel="self"/>
   <link href="http://blog.daxiaoyun.com/"/>
-  <updated>2015-07-30T01:09:43+08:00</updated>
+  <updated>2015-07-31T01:47:33+08:00</updated>
   <id>http://blog.daxiaoyun.com/</id>
   <author>
     <name><![CDATA[Cool Cloud]]></name>
@@ -12,6 +12,78 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[使用 Ulysses 写作]]></title>
+    <link href="http://blog.daxiaoyun.com/blog/20150731/ulysses/"/>
+    <updated>2015-07-31T00:40:00+08:00</updated>
+    <id>http://blog.daxiaoyun.com/blog/20150731/ulysses</id>
+    <content type="html"><![CDATA[<p><img src="http://blog.daxiaoyun.com/images/my/tools/ulysses.png" /></p>
+
+<blockquote>
+  <p>We believe that writing is about content, about what you want to say – not about fancy formatting. 
+我们坚信写作写的是内容，所思所想，而不是花样格式。
+— Ulysses for Mac</p>
+</blockquote>
+
+<p>正像你看到的，ulysses 官网的一张背景图，午后湖边，办一张椅子，安静惬意地敲打着文字，行云流水一般，沉浸式地写作。</p>
+
+<h3 id="section">完美的写作工具</h3>
+
+<ol>
+  <li>
+    <p>Ulysses 是一款具有单一文库的应用程序，您的所有文本都会放在这个单一的文本库中。这里没有“打开”，没有“存储”，没有 Finder 访问 - 一切都只发生在这个窗口中。</p>
+  </li>
+  <li>
+    <p>只要获得您的授权，Ulysses 就可以充分利用 iCloud 来储存您的文本。然后，您可以从所有 Mac 和 iPad 上访问您的文本（可以在家，也可以在旅途中）。只要连网，它们就会自动同步。</p>
+  </li>
+  <li>
+    <p>Ulysses 不提供 WYSIWYG（所见即所得）样式和格式。相反，当您将文本导出为 PDF、网页或 ebook 时它将自动格式化。</p>
+  </li>
+</ol>
+
+<h3 id="ulysses">初探 Ulysses</h3>
+<p>我们首先让您有个大概的了解。这是用户界面概览（从左到右）：</p>
+
+<ul>
+  <li>侧边栏</li>
+  <li>文稿列表</li>
+  <li>编辑器</li>
+</ul>
+
+<p>侧边栏的<strong>介绍</strong>组起初想看完之后删掉，但是不能这么做，我想他是觉得 Ulysses 的介绍足够有趣和有用，你随时需要回来看看他的例子，我现在适应了。</p>
+
+<p><code>cmd + 6</code> 快速导出，支持 <code>html</code>、<code>epub</code>、<code>PDF</code>、<code>docx</code>，都美的难以执行，所以我想到完全使用 Ulysses 作为我的写作工具，导出 html 
+格式给微信公众号，从这里直接复制到 <strong>Sublime text</strong> 发布到 <strong>github pages</strong>.</p>
+
+<p><code>cmd + 8</code> 太妙了，可以对文档导航，就像目录一样，非常便捷</p>
+
+<p><code>cmd + 9</code> 有一个完整的 <em>markdown</em> 语法列表，很实用，反复练习几遍就都记住了</p>
+
+<h3 id="section-1">跟踪进度</h3>
+
+<p>您是否注意到工具栏中的气压计按钮？ 它提供详细的文本统计。您还可以自定义它们： 撕开面板，并点击齿轮图标。</p>
+
+<p>虽然我觉得这个对我来说没那么有用，我不是写小说的，但是这个设计足够吸引我截个图。</p>
+
+<p><img src="http://blog.daxiaoyun.com/images/my/tools/track-cycle.png" /></p>
+
+<p>制定写作目标后，您可以根据确定的字或字符限值跟踪进度。该文稿的目标是“大约 510 个字符” - 打开附件栏显示它。现在输入一些字。看见吗？</p>
+
+<p>提示： 统计和目标也可以通过其上下文菜单用于整个组。</p>
+
+<h3 id="deadalus-touch">我竟然买过 Deadalus touch</h3>
+<p>如果您拥有 [Daedalus Touch] for iOS，并且启用了 iCloud，则可以通过 Ulysses 访问您的书库。它们将作为组显示在此名称的侧边栏中，您可以用 Ulysses 的高级功能继续您在路上已开始的工作。</p>
+
+<h3 id="section-2">爱上写作</h3>
+
+<p>从此爱上写作，每天伴随我到深夜，每天不拉下。</p>
+
+<p>最重要的是，Ulysses 建立在不断发展和适应中。您可以将它作为一个功能全面的记事本，或用它来写您的下一部小说。您可以写您的博客，让一切保持整洁，或随意涂鸦。
+这里没有“正确”的方式来使用，您觉得怎么舒服就怎么做吧。</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[讨论起来吧]]></title>
