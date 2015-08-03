@@ -1,0 +1,380 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Ack 2.14 Is a Tool Like Grep, Optimized for Programmers - 大小云</title>
+  <meta name="author" content="Cool Cloud">
+
+  
+  <meta name="description" content="今天本地环境 npm 包有点问题，后来知道是本地仓库的版本过久，大家已经不用本地仓库的 npm 包了，使用官方包重新 install 即可。 于是找到了兆博，他劈里啪啦地敲了很多简写的命令，比如： j solar (autojump) g st (git status) npm i -d ( &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.daxiaoyun.com/blog/20150804/ack/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="大小云" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">大小云</a></h1>
+  
+    <h2>清凉自由且充满梦想和渴望</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="blog.daxiaoyun.com">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Ack 2.14 Is a Tool Like Grep, Optimized for Programmers</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-08-04T01:10:00+08:00'><span class='date'>2015 年8 月4 日</span> <span class='time'>1:10 am</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://blog.daxiaoyun.com">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img src="/images/my/tools/Beyond_grep__ack_2_14__a_source_code_search_tool_for_programmers.png" /></p>
+
+<p>今天本地环境 npm 包有点问题，后来知道是本地仓库的版本过久，大家已经不用本地仓库的 npm 包了，使用官方包重新 install 即可。</p>
+
+<p>于是找到了兆博，他劈里啪啦地敲了很多简写的命令，比如：</p>
+
+<p><code>j solar</code> (autojump)</p>
+
+<p><code>g st</code> (git status)</p>
+
+<p><code>npm i -d</code> (npm install –debug)</p>
+
+<p>Amazing，还有 <code>ack</code>，庆幸的是我本地这些都支持，也许我用的 zsh 的缘故吧！感觉好强大。</p>
+
+<p>于是，我看到 <code>ack</code> 的好，决定翻翻它的资料，今天也找资料练习了一番。</p>
+
+<p>以下是翻译的蹩脚的官网的一篇文章“<a href="http://beyondgrep.com/why-ack/">Top 10 reasons to use ack for source code</a>”，使用 ack 搜索源代码的十个理由</p>
+
+<p>作者写的轻松幽默，至少我看着挺幽默的</p>
+
+<p>一、It’s fast 它超快</p>
+
+<p>Ack only searches the stuff that makes sense to search. Perl’s regular expressions are highly optimized.</p>
+
+<p>ack 仅搜索有意义的地方，Perl 的正则表达式被高度优化。</p>
+
+<p>二、 It’s portable 它是可移植的</p>
+
+<p>ack is pure Perl, so it runs on Windows just fine. It has no dependencies other than Perl 5. Installation is a snap.</p>
+
+<p>ack 是纯 Perl 写成，所以它在 Windows 运行得也挺好，除了 Perl 5 它不依赖任何其他东西，安装它啪地一下。</p>
+
+<p>三、It ignores VCS directories 它忽略 VCS 目录</p>
+
+<p>ack searches recursively by default, while ignoring .git, .svn, CVS and other VCS directories.</p>
+
+<p>ack 默认递归搜索，忽略 .git, .svn, CVS 和其他 VCS （版本控制系统）目录。</p>
+
+<p># Which would you rather type?</p>
+
+<p>那个是你喜欢的类型？</p>
+
+<blockquote>
+  <table>
+    <tbody>
+      <tr>
+        <td>$ grep pattern $(find . -type f</td>
+        <td>grep -v ‘.svn’)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>$ ack pattern</p>
+</blockquote>
+
+<p>四、Better search results 更好的搜索结果</p>
+
+<p>Since ack defaults to only searching source code, you get fewer false positives.</p>
+
+<p>因为ack默认只搜索源代码,你得到更少的假阳性（误判，排除了多余的干扰）。</p>
+
+<pre><code>• VCS directories 
+VCS 目录
+• blib, the Perl build directory
+blib，Perl 编译目录
+• backup files like foo ~and #foo#
+备份文件，比如：foo 和 #foo#
+• binary files, core dumps, etc
+二进制文件，核心转储文件，等等
+</code></pre>
+
+<blockquote>
+  <p>core dump又叫核心转储, 当程序运行过程中发生异常, 程序异常退出时, 由操作系统把程序当前的内存状况存储在一个core文件中, 叫core dump.</p>
+</blockquote>
+
+<p>五、Easy filetype specifications 容易指定文件类型</p>
+
+<p>If you have a big project with many different languages combined, it’s easy to add –perl to search only Perl files, or use –nohtml to search everything except HTML.</p>
+
+<p>ack’s filetype detection means more than just specifying a single file extension.</p>
+
+<p>如果你有一个大项目，很多不同语言的组合在一起，添加 —perl 参数很容易仅搜索 perl 文件，或者使用 —nohtml 来排除 HTML 文件。</p>
+
+<pre><code># Which would you rather type? 
+$ grep pattern 
+$(find . -name '*.pl' -or -name '*.pm' -or -name '*.pod' | grep -v .svn)
+
+$ ack --perl pattern
+</code></pre>
+
+<p>Plus, ack does filetype detection that find can’t. ack checks the shebang lines of scripts without extensions.</p>
+
+<p>另外，ack 能够检测文件类型，对于没有扩展名的脚本，ack 会检查脚本的 shebang 行（第一行 #! 后面的解释器，根据解释器判定文件类型）</p>
+
+<blockquote>
+  <p>在计算机科学中，Shebang（也称为Hashbang）是一个由井号和叹号构成的字符序列（#!），其出现在文本文件的第一行的前两个字符。 在文件中存在Shebang的情况下，类Unix操作系统的程序载入器会分析Shebang后的内容，将这些内容作为解释器指令，并调用该指令，并将载有Shebang的文件路径作为该解释器的参数[1]。
+例如，以指令
+#!/bin/sh</p>
+</blockquote>
+
+<p>六、Creates lists of files without searching 创建文件列表而不搜索</p>
+
+<p>Since ack can know to search only, say, Ruby files with the –ruby switch, you can also generate a list of files in a tree with the -f switch.</p>
+
+<p>话说，ACK 可以仅搜索某一类型的文件， 比如：带 —ruby 开关选项仅搜索 ruby 文件，还可以带 -f 选项只生成一个文件类表，</p>
+
+<pre><code># List all Ruby files in the tree
+$ ack -f —python &gt; all-python-files
+</code></pre>
+
+<p>七、Match highlighting 匹配结果高亮</p>
+
+<p>ack has flexible match highlighting, where you can specify the colors to use in its output.</p>
+
+<p>ack 有灵活的结果高亮，你能给输出结果指定颜色</p>
+
+<p>八、 Perl regular expressions Perl 正则表达式</p>
+
+<p>Perl leads the programming world with its regular expressions. ack uses Perl’s regular expressions, not a “Perl-compatible” subset.</p>
+
+<p>Perl 的正则表达式引领编程世界，ack 使用 Perl 的正则表达式，不是 Perl 兼容的子集</p>
+
+<p>You can also take advantage of Perl’s match variables. For example, to generate a list of all files #included in your C code, use this:</p>
+
+<p>您还可以利用 Perl 的匹配变量的优势。例如，要生成包含（#include）在C代码的所有文件的列表，用这个：</p>
+
+<p><code>ack --cc '#include\s+&lt;(.*)&gt;' --output '$1' -h</code></p>
+
+<p>九、Command switches much like GNU grep 命令参数很像 GUN grep</p>
+
+<p>If you know GNU grep, you know most of ack’s switches, too. Word-only searching with -w, case-insensitive searching with -i, etc</p>
+
+<p>如果你知道 GNU grep，你也就了解了大多数的 ack 参数，-w 整词匹配，-i 大小写不敏感</p>
+
+<p>十、”ack” is shorter than “grep” to type</p>
+
+<p>This one is sort of a joke, but sort of not. You spend hours every day searching through source code. ack makes it as quick and easy as possible to do that searching and to remove as much drudgerous typing as possible.</p>
+
+<p>一个玩笑的排序，而且没有排序。你每天花时间通过源代码搜索。ack 快速、简单，并尽可能去掉打字的苦差事。</p>
+
+<p>Defaults matter. The less typing you have to do, the better.</p>
+
+<p>别迟疑。少打字，极好的</p>
+
+<p>What are you waiting for?</p>
+
+<p>你还在等什么？</p>
+
+<p>Installation is a snap. Try ack for yourself.</p>
+
+<p>嗖的一下就安装好了，你自己试试 ack</p>
+
+<p><img src="/images/my/tools/ack_beanstalk.png" /></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Cool Cloud</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-08-04T01:10:00+08:00'><span class='date'>2015 年8 月4 日</span> <span class='time'>1:10 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/tools/'>tools</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.daxiaoyun.com/blog/20150804/ack/" data-via="EaseCloud" data-counturl="http://blog.daxiaoyun.com/blog/20150804/ack/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/20150731/ulysses/" title="Previous Post: 使用 Ulysses 写作">&laquo; 使用 Ulysses 写作</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/20150804/ack/">Ack 2.14 Is a Tool Like Grep, Optimized for Programmers</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20150731/ulysses/">使用 Ulysses 写作</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20150730/disqus/">讨论起来吧</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20150728/haozhaopian/">好照片</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20150727/terminal-record-tool/">终端录屏神器</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Cool Cloud -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'daxiaoyun';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.daxiaoyun.com/blog/20150804/ack/';
+        var disqus_url = 'http://blog.daxiaoyun.com/blog/20150804/ack/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

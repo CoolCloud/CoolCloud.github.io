@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Tools | 大小云]]></title>
   <link href="http://blog.daxiaoyun.com/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://blog.daxiaoyun.com/"/>
-  <updated>2015-07-31T01:47:33+08:00</updated>
+  <updated>2015-08-04T01:28:29+08:00</updated>
   <id>http://blog.daxiaoyun.com/</id>
   <author>
     <name><![CDATA[Cool Cloud]]></name>
@@ -12,6 +12,167 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ack 2.14 Is a Tool Like Grep, Optimized for Programmers]]></title>
+    <link href="http://blog.daxiaoyun.com/blog/20150804/ack/"/>
+    <updated>2015-08-04T01:10:00+08:00</updated>
+    <id>http://blog.daxiaoyun.com/blog/20150804/ack</id>
+    <content type="html"><![CDATA[<p><img src="/images/my/tools/Beyond_grep__ack_2_14__a_source_code_search_tool_for_programmers.png"></p>
+
+<p>今天本地环境 npm 包有点问题，后来知道是本地仓库的版本过久，大家已经不用本地仓库的 npm 包了，使用官方包重新 install 即可。</p>
+
+<p>于是找到了兆博，他劈里啪啦地敲了很多简写的命令，比如：</p>
+
+<p><code>j solar</code> (autojump)</p>
+
+<p><code>g st</code> (git status)</p>
+
+<p><code>npm i -d</code> (npm install –debug)</p>
+
+<p>Amazing，还有 <code>ack</code>，庆幸的是我本地这些都支持，也许我用的 zsh 的缘故吧！感觉好强大。</p>
+
+<p>于是，我看到 <code>ack</code> 的好，决定翻翻它的资料，今天也找资料练习了一番。</p>
+
+<p>以下是翻译的蹩脚的官网的一篇文章“<a href="http://beyondgrep.com/why-ack/">Top 10 reasons to use ack for source code</a>”，使用 ack 搜索源代码的十个理由</p>
+
+<p>作者写的轻松幽默，至少我看着挺幽默的</p>
+
+<p>一、It’s fast 它超快</p>
+
+<p>Ack only searches the stuff that makes sense to search. Perl’s regular expressions are highly optimized.</p>
+
+<p>ack 仅搜索有意义的地方，Perl 的正则表达式被高度优化。</p>
+
+<p>二、 It’s portable 它是可移植的</p>
+
+<p>ack is pure Perl, so it runs on Windows just fine. It has no dependencies other than Perl 5. Installation is a snap.</p>
+
+<p>ack 是纯 Perl 写成，所以它在 Windows 运行得也挺好，除了 Perl 5 它不依赖任何其他东西，安装它啪地一下。</p>
+
+<p>三、It ignores VCS directories 它忽略 VCS 目录</p>
+
+<p>ack searches recursively by default, while ignoring .git, .svn, CVS and other VCS directories.</p>
+
+<p>ack 默认递归搜索，忽略 .git, .svn, CVS 和其他 VCS （版本控制系统）目录。</p>
+
+<p># Which would you rather type?</p>
+
+<p>那个是你喜欢的类型？</p>
+
+<blockquote>
+  <table>
+    <tbody>
+      <tr>
+        <td>$ grep pattern $(find . -type f</td>
+        <td>grep -v ‘.svn’)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>$ ack pattern</p>
+</blockquote>
+
+<p>四、Better search results 更好的搜索结果</p>
+
+<p>Since ack defaults to only searching source code, you get fewer false positives.</p>
+
+<p>因为ack默认只搜索源代码,你得到更少的假阳性（误判，排除了多余的干扰）。</p>
+
+<pre><code>• VCS directories 
+VCS 目录
+• blib, the Perl build directory
+blib，Perl 编译目录
+• backup files like foo ~and #foo#
+备份文件，比如：foo 和 #foo#
+• binary files, core dumps, etc
+二进制文件，核心转储文件，等等
+</code></pre>
+
+<blockquote>
+  <p>core dump又叫核心转储, 当程序运行过程中发生异常, 程序异常退出时, 由操作系统把程序当前的内存状况存储在一个core文件中, 叫core dump.</p>
+</blockquote>
+
+<p>五、Easy filetype specifications 容易指定文件类型</p>
+
+<p>If you have a big project with many different languages combined, it’s easy to add –perl to search only Perl files, or use –nohtml to search everything except HTML.</p>
+
+<p>ack’s filetype detection means more than just specifying a single file extension.</p>
+
+<p>如果你有一个大项目，很多不同语言的组合在一起，添加 —perl 参数很容易仅搜索 perl 文件，或者使用 —nohtml 来排除 HTML 文件。</p>
+
+<pre><code># Which would you rather type? 
+$ grep pattern 
+$(find . -name '*.pl' -or -name '*.pm' -or -name '*.pod' | grep -v .svn)
+
+$ ack --perl pattern
+</code></pre>
+
+<p>Plus, ack does filetype detection that find can’t. ack checks the shebang lines of scripts without extensions.</p>
+
+<p>另外，ack 能够检测文件类型，对于没有扩展名的脚本，ack 会检查脚本的 shebang 行（第一行 #! 后面的解释器，根据解释器判定文件类型）</p>
+
+<blockquote>
+  <p>在计算机科学中，Shebang（也称为Hashbang）是一个由井号和叹号构成的字符序列（#!），其出现在文本文件的第一行的前两个字符。 在文件中存在Shebang的情况下，类Unix操作系统的程序载入器会分析Shebang后的内容，将这些内容作为解释器指令，并调用该指令，并将载有Shebang的文件路径作为该解释器的参数[1]。
+例如，以指令
+#!/bin/sh</p>
+</blockquote>
+
+<p>六、Creates lists of files without searching 创建文件列表而不搜索</p>
+
+<p>Since ack can know to search only, say, Ruby files with the –ruby switch, you can also generate a list of files in a tree with the -f switch.</p>
+
+<p>话说，ACK 可以仅搜索某一类型的文件， 比如：带 —ruby 开关选项仅搜索 ruby 文件，还可以带 -f 选项只生成一个文件类表，</p>
+
+<pre><code># List all Ruby files in the tree
+$ ack -f —python &gt; all-python-files
+</code></pre>
+
+<p>七、Match highlighting 匹配结果高亮</p>
+
+<p>ack has flexible match highlighting, where you can specify the colors to use in its output.</p>
+
+<p>ack 有灵活的结果高亮，你能给输出结果指定颜色</p>
+
+<p>八、 Perl regular expressions Perl 正则表达式</p>
+
+<p>Perl leads the programming world with its regular expressions. ack uses Perl’s regular expressions, not a “Perl-compatible” subset.</p>
+
+<p>Perl 的正则表达式引领编程世界，ack 使用 Perl 的正则表达式，不是 Perl 兼容的子集</p>
+
+<p>You can also take advantage of Perl’s match variables. For example, to generate a list of all files #included in your C code, use this:</p>
+
+<p>您还可以利用 Perl 的匹配变量的优势。例如，要生成包含（#include）在C代码的所有文件的列表，用这个：</p>
+
+<p><code>ack --cc '#include\s+&lt;(.*)&gt;' --output '$1' -h</code></p>
+
+<p>九、Command switches much like GNU grep 命令参数很像 GUN grep</p>
+
+<p>If you know GNU grep, you know most of ack’s switches, too. Word-only searching with -w, case-insensitive searching with -i, etc</p>
+
+<p>如果你知道 GNU grep，你也就了解了大多数的 ack 参数，-w 整词匹配，-i 大小写不敏感</p>
+
+<p>十、”ack” is shorter than “grep” to type</p>
+
+<p>This one is sort of a joke, but sort of not. You spend hours every day searching through source code. ack makes it as quick and easy as possible to do that searching and to remove as much drudgerous typing as possible.</p>
+
+<p>一个玩笑的排序，而且没有排序。你每天花时间通过源代码搜索。ack 快速、简单，并尽可能去掉打字的苦差事。</p>
+
+<p>Defaults matter. The less typing you have to do, the better.</p>
+
+<p>别迟疑。少打字，极好的</p>
+
+<p>What are you waiting for?</p>
+
+<p>你还在等什么？</p>
+
+<p>Installation is a snap. Try ack for yourself.</p>
+
+<p>嗖的一下就安装好了，你自己试试 ack</p>
+
+<p><img src="/images/my/tools/ack_beanstalk.png"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[使用 Ulysses 写作]]></title>
@@ -274,144 +435,6 @@ $ devpi upload dist/*
 <p>点击<a href="https://asciinema.org/browse/featured">这里</a>欣赏一下极客们是怎么玩终端的吧？</p>
 
 <p>今天老婆做了疙瘩汤，有段时间没吃了，我吃了两碗。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[进入 Python 世界]]></title>
-    <link href="http://blog.daxiaoyun.com/blog/20150722/in-python-world/"/>
-    <updated>2015-07-22T23:14:00+08:00</updated>
-    <id>http://blog.daxiaoyun.com/blog/20150722/in-python-world</id>
-    <content type="html"><![CDATA[<h2 id="section">该怎么开始学习一个完整的项目？</h2>
-<p>完整地接触 python 近一个月了，这一个月了，从开始一周学习 python 语法，第二周开始写活动项目，最近再次回过头来完整地熟悉代码结构和业务逻辑，经历了一个完整的起承转合。</p>
-
-<p>大概的学习流程：</p>
-
-<ol>
-  <li>看 Python 中文文档，边看文档边做例子，建一个项目 py-study，对于新手还是用 IDE 比较顺手，可以通过提示和自动完成熟悉 Python 语法，我用的是 pycharm，可以在项目里直接调试</li>
-  <li>看 Flask 中文文档（项目框架，熟悉主要的语法和库，重点学习一下 blueprint）</li>
-  <li>看 Werkzeug 中文文档（web 服务器，快速过一遍）</li>
-  <li>开始做项目，看一个现在项目里的例子，照着做，我开始接手一个相对独立的系统，活动系统，设计数据结构，评审讨论，之后开始实施，熟悉工作流程</li>
-  <li>写单元测试，很不错的实践</li>
-  <li>code review，大神们给建议，指出问题，通过修改经验值倍增</li>
-  <li>深挖业务逻辑，这两周的工作，通过了解了大致的工作流程，对 Python 也上手了，可以动手做项目之后，系统地过一遍现有的业务逻辑，对接下来的活动奖励心里有底，返现、返券之类，想了很多办法，也是第一次这么实践（Sublime 很强大，对 md 语法也支持，对一个列表回车时会自动加出序列，比如：我开始输入“1. (需要空格)”，回车之后自动出来第二项，开始没打空格没效果）</li>
-  <li>使用 EA 梳理出主要的业务流程，实体和用例</li>
-  <li>再回头完善项目</li>
-</ol>
-
-<p>一般的做法时带着问题熟悉系统，但是不全面，我这次从头到尾看一遍，遇到一些很有深度的东西如果当时不理解原理，先放一放，记个笔记，之后异步完成找资料学习，不太影响对主线逻辑的梳理。</p>
-
-<h2 id="section-1">记笔记梳理结构</h2>
-
-<p>先上一张图（专门看了 md 插入图片的语法）
-<img src="/images/my/solar-directory-tree.png"></p>
-
-<p>这里我做了很多调整(md 使用 tab 能生成嵌套 list)</p>
-
-<ol>
-  <li>使用心心多少表示重要程度，一目了然
-    <ol>
-      <li>一星表示基本不用关心，比如：反馈</li>
-      <li>二星表示不重要的功能，很独立，比如：mail</li>
-      <li>三星表示一般性，比如：product</li>
-      <li>四星表示库代码，比如：oauth</li>
-      <li>五星表示最核心和最先要研究的，比如：攒钱和礼券</li>
-    </ol>
-  </li>
-  <li>层级关系
-    <ol>
-      <li>一个类一级</li>
-      <li>属性和常量单独一级</li>
-      <li>couchdb 的属性单独一级</li>
-    </ol>
-  </li>
-  <li>直接上代码
-    <ol>
-      <li>代码颜色高亮更漂亮</li>
-      <li>增加必要的注释，便于对逻辑进行梳理</li>
-    </ol>
-  </li>
-  <li>加了一列“表”，把设计到的表名列出来</li>
-  <li>遇到不太明白的语法先记下来</li>
-</ol>
-
-<p><img src="/images/my/outliner-solar-withdraw.png"></p>
-
-<h3 id="section-2">一些常用的快捷键</h3>
-<p>(md 的表格不需要左右 |，很简洁)</p>
-
-<table>
-  <tbody>
-    <tr>
-      <td><strong>功能</strong></td>
-      <td><strong>快捷键</strong></td>
-    </tr>
-    <tr>
-      <td>跳转列</td>
-      <td>opt+左右</td>
-    </tr>
-    <tr>
-      <td>行内换行</td>
-      <td>opt+回车</td>
-    </tr>
-    <tr>
-      <td>在上面插入一行</td>
-      <td>shift+回车</td>
-    </tr>
-    <tr>
-      <td>在下面插入一行</td>
-      <td>ctrl+回车</td>
-    </tr>
-    <tr>
-      <td>focus</td>
-      <td>cmd+shift+f</td>
-    </tr>
-    <tr>
-      <td>取消 focus</td>
-      <td>cms+shift+opt+f</td>
-    </tr>
-    <tr>
-      <td>上移</td>
-      <td>ctrl+cmd+上</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="section-3">那些生疏的语法</h2>
-
-<p>先记下来，之后再找资料体会，学完之后，放入另外的笔记本或者删除
-文件我后来觉得可以用类名取代，通过 pycharm 编辑器查找类很快，记录起来比较方便</p>
-
-<table>
-  <tbody>
-    <tr>
-      <td><strong>名词</strong></td>
-      <td><strong>场景</strong></td>
-      <td><strong>文件</strong></td>
-      <td><strong>代码块</strong></td>
-    </tr>
-    <tr>
-      <td>copy.deepcopy</td>
-      <td>Calculator</td>
-      <td> </td>
-      <td><code>data = copy.deepcopy(self.data)</code></td>
-    </tr>
-  </tbody>
-</table>
-
-<p><img src="/images/my/solar-concept.png"></p>
-
-<p>– 表格的语法有待进一步完善</p>
-
-<p>之后我在写一篇我是怎么使用印象笔记的
-还有 EA 的使用成果</p>
-
-<p>先上几张图(学会了图片标签)</p>
-
-<p><img src="/images/my/xmind-activity.png">
-<img src="/images/my/ea-activity-time.png">
-<img src="/images/my/ea-activity-class.png"></p>
-
 ]]></content>
   </entry>
   
